@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranjith B — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EEF1EA;
+    --paper-dim: #E3E7DD;
+    --ink: #12241C;
+    --ink-soft: #3E5148;
+    --line: #C4CDBB;
+    --signal: #2F6F4E;
+    --signal-dim: #E4EDE3;
+    --alert: #C1552C;
+    --alert-dim: #F3E2D8;
+    --white: #FAFBF8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- top status bar ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .dot{
+    display:inline-block;width:7px;height:7px;border-radius:50%;
+    background:var(--signal);margin-right:8px;
+    box-shadow:0 0 0 0 rgba(47,111,78,0.5);
+    animation:pulse 2.2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(47,111,78,0.45);}
+    70%{box-shadow:0 0 0 8px rgba(47,111,78,0);}
+    100%{box-shadow:0 0 0 0 rgba(47,111,78,0);}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 56px;}
+  .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--signal);margin-bottom:18px;display:flex;align-items:center;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(40px,6vw,74px);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    padding:12px 20px;
+    border:1px solid var(--ink);
+    display:inline-flex;align-items:center;gap:8px;
+    text-decoration:none;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--signal);border-color:var(--signal);}
+  .btn-ghost{color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+
+  /* status panel card */
+  .panel{
+    border:1px solid var(--ink);
+    background:var(--white);
+  }
+  .panel-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .panel-body{padding:18px 16px;}
+  .metric-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+  }
+  .metric-row:last-child{border-bottom:none;}
+  .metric-row .val{font-weight:600;color:var(--ink);}
+  .status-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;letter-spacing:0.06em;text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:2px;
+  }
+  .status-live{background:var(--signal-dim);color:var(--signal);}
+  .status-active{background:var(--signal-dim);color:var(--signal);}
+  .status-archived{background:var(--alert-dim);color:var(--alert);}
+
+  section{padding:64px 0;border-top:1px solid var(--line);}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px;}
+  .section-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--signal);}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;}
+  .section-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);margin-left:auto;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .about-grid p{color:var(--ink-soft);font-size:16px;margin-bottom:16px;max-width:52ch;}
+  .lang-list{list-style:none;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .lang-list li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);}
+
+  /* modules / skills */
+  .module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .module{background:var(--white);padding:22px;}
+  .module h3{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;
+    display:flex;justify-content:space-between;
+  }
+  .skill-row{margin-bottom:12px;}
+  .skill-row:last-child{margin-bottom:0;}
+  .skill-name{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px;}
+  .skill-track{height:4px;background:var(--paper-dim);position:relative;overflow:hidden;}
+  .skill-fill{
+    position:absolute;left:0;top:0;height:100%;background:var(--signal);
+    width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1);
+  }
+  .module.visible .skill-fill{width:var(--w);}
+
+  /* projects */
+  .proj-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .proj{background:var(--white);padding:28px 26px;display:grid;grid-template-columns:0.9fr 1.6fr 0.7fr;gap:24px;align-items:start;}
+  .proj-name{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:8px;}
+  .proj-stack{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--signal);letter-spacing:0.02em;}
+  .proj-desc{color:var(--ink-soft);font-size:14.5px;}
+  .proj-metric{
+    font-family:'IBM Plex Mono',monospace;
+    text-align:right;
+  }
+  .proj-metric .big{font-size:28px;font-weight:600;color:var(--ink);display:block;}
+  .proj-metric .cap{font-size:10.5px;color:var(--ink-soft);letter-spacing:0.05em;text-transform:uppercase;}
+
+  /* log / internship */
+  .log-entry{
+    border:1px solid var(--line);background:var(--white);
+    padding:24px 26px;display:grid;grid-template-columns:140px 1fr;gap:24px;
+  }
+  .log-time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .log-time .tag{display:inline-block;margin-top:8px;}
+
+  /* certifications */
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .cert{
+    border:1px solid var(--line);padding:14px 16px;font-size:13.5px;
+    display:flex;align-items:center;gap:10px;background:var(--white);
+  }
+  .cert::before{content:"//";font-family:'IBM Plex Mono',monospace;color:var(--signal);font-size:12px;}
+
+  /* education timeline */
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tl-item{position:relative;padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-28px;top:4px;width:9px;height:9px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--signal);
+  }
+  .tl-year{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--signal);margin-bottom:4px;}
+  .tl-title{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:3px;}
+  .tl-sub{font-size:14px;color:var(--ink-soft);}
+
+  /* footer / contact */
+  footer{padding:64px 0 48px;}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;}
+  footer h2{margin-bottom:14px;}
+  .contact-list{list-style:none;font-family:'IBM Plex Mono',monospace;font-size:14px;}
+  .contact-list li{padding:9px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;}
+  .contact-list a:hover{color:var(--signal);}
+  .foot-note{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* responsive */
+  @media (max-width:860px){
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .module-grid{grid-template-columns:1fr 1fr;}
+    .proj{grid-template-columns:1fr;}
+    .proj-metric{text-align:left;}
+    .cert-grid{grid-template-columns:1fr 1fr;}
+    .log-entry{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .module-grid, .cert-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+  }
+
+  :focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="dot"></span>SYSTEM STATUS: <span style="color:var(--signal)">ONLINE</span></span>
+    <span class="mono">COIMBATORE, TAMIL NADU · IST</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">// Portfolio v1.0 — last deployed 2026</div>
+      <h1>Ranjith B</h1>
+      <p class="lede">Full stack developer building web systems that keep small operations — hospitals, labs, records — running on time. Java &amp; Spring Boot on the backend, React on the front, AWS underneath.</p>
+      <div class="hero-cta">
+        <a href="#systems" class="btn btn-solid">View deployed systems ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <span>status.log</span>
+        <span class="dot" style="margin-right:0"></span>
+      </div>
+      <div class="panel-body">
+        <div class="metric-row"><span>role</span><span class="val">Full Stack Dev (Entry)</span></div>
+        <div class="metric-row"><span>degree</span><span class="val">B.Tech CSBS · 8.3 CGPA</span></div>
+        <div class="metric-row"><span>expected_grad</span><span class="val">2027</span></div>
+        <div class="metric-row"><span>systems_shipped</span><span class="val">3</span></div>
+        <div class="metric-row"><span>certifications</span><span class="val">9</span></div>
+        <div class="metric-row"><span>uptime_since</span><span class="val">2023</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>Aspiring full stack developer with hands-on experience across Java, Spring Boot, Python, SQL, and AWS. I like building things that replace a clipboard or a spreadsheet with something that actually tracks state in real time — a queue, an attendance log, a record.</p>
+        <p>Currently completing a B.Tech in Computer Science &amp; Business Systems at Nehru Institute of Engineering and Technology, Coimbatore, while shipping small production-shaped projects on the side.</p>
+      </div>
+      <div>
+        <ul class="lang-list">
+          <li><span>Tamil</span><span>Native</span></li>
+          <li><span>English</span><span>Intermediate</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modules">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Modules</h2>
+      <span class="section-note">technical skill set</span>
+    </div>
+    <div class="module-grid reveal">
+      <div class="module">
+        <h3>Languages</h3>
+        <div class="skill-row"><div class="skill-name"><span>Java</span></div><div class="skill-track"><div class="skill-fill" style="--w:82%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>Python</span></div><div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>SQL / MySQL</span></div><div class="skill-track"><div class="skill-fill" style="--w:78%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>HTML / CSS</span></div><div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div></div>
+      </div>
+      <div class="module">
+        <h3>Frameworks</h3>
+        <div class="skill-row"><div class="skill-name"><span>Spring Boot</span></div><div class="skill-track"><div class="skill-fill" style="--w:78%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>Flask</span></div><div class="skill-track"><div class="skill-fill" style="--w:65%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>React</span></div><div class="skill-track"><div class="skill-fill" style="--w:45%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>Git / GitHub</span></div><div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div></div>
+      </div>
+      <div class="module">
+        <h3>Analytics</h3>
+        <div class="skill-row"><div class="skill-name"><span>Power BI</span></div><div class="skill-track"><div class="skill-fill" style="--w:65%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>Tableau</span></div><div class="skill-track"><div class="skill-fill" style="--w:60%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>Excel</span></div><div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div></div>
+        <div class="skill-row"><div class="skill-name"><span>AWS Cloud</span></div><div class="skill-track"><div class="skill-fill" style="--w:60%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Deployed systems</h2>
+      <span class="section-note">selected projects</span>
+    </div>
+    <div class="proj-list reveal">
+      <div class="proj">
+        <div>
+          <div class="proj-name">MediQ</div>
+          <div class="proj-stack">React · Supabase · Razorpay</div>
+          <div style="margin-top:10px"><span class="status-tag status-live">Live</span></div>
+        </div>
+        <div class="proj-desc">Online outpatient token booking PWA with live queue management and secure payments, plus role-based dashboards for hospital staff.</div>
+        <div class="proj-metric"><span class="big">-80%</span><span class="cap">Patient wait time</span></div>
+      </div>
+      <div class="proj">
+        <div>
+          <div class="proj-name">PHC Attendance System</div>
+          <div class="proj-stack">Java · Spring Boot · MySQL</div>
+          <div style="margin-top:10px"><span class="status-tag status-active">Active</span></div>
+        </div>
+        <div class="proj-desc">Backend system tracking doctor attendance and healthcare data across Primary Health Centres, with centralized monitoring for record accuracy.</div>
+        <div class="proj-metric"><span class="big">PHC</span><span class="cap">Centralized monitoring</span></div>
+      </div>
+      <div class="proj">
+        <div>
+          <div class="proj-name">AI Lab Record Generator</div>
+          <div class="proj-stack">Python</div>
+          <div style="margin-top:10px"><span class="status-tag status-active">Active</span></div>
+        </div>
+        <div class="proj-desc">Automates lab record creation for CS and science subjects, cutting manual effort while keeping academic documentation accurate.</div>
+        <div class="proj-metric"><span class="big">Auto</span><span class="cap">Record generation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="log">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Field log</h2>
+      <span class="section-note">internship</span>
+    </div>
+    <div class="log-entry reveal">
+      <div class="log-time">1 month<br>NoviTech R&amp;D<div class="tag status-tag status-archived">Completed</div></div>
+      <div>
+        <div class="proj-name" style="font-size:19px;margin-bottom:8px;">Cybersecurity Intern</div>
+        <div class="proj-desc">Performed network monitoring and vulnerability detection using Wireshark, documenting security gaps and mitigation strategies. Built foundational exposure to network security and threat detection best practices.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="cert-grid reveal">
+      <div class="cert">AI &amp; ML — Google</div>
+      <div class="cert">Generative AI &amp; Deep Learning — EduSkills</div>
+      <div class="cert">Blockchain — NPTEL</div>
+      <div class="cert">Data Science Master — Altair</div>
+      <div class="cert">Business Analyst — Celonis</div>
+      <div class="cert">IoT — NPTEL</div>
+      <div class="cert">Java (Basic) — HackerRank</div>
+      <div class="cert">Python (Basic) — HackerRank</div>
+      <div class="cert">Android Dev — Google</div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2>Education</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-year">Expected 2027</div>
+        <div class="tl-title">B.Tech, Computer Science &amp; Business Systems</div>
+        <div class="tl-sub">Nehru Institute of Engineering and Technology, Coimbatore · 8.3 CGPA</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-title">Higher Secondary (12th Grade)</div>
+        <div class="tl-sub">Government Higher Secondary School, Marungapuri · 79%</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Secondary School Certificate (10th Grade)</div>
+        <div class="tl-sub">Government High School, T.Edaiyappatti</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid reveal">
+      <div>
+        <h2>Let's build something.</h2>
+        <p style="color:var(--ink-soft);max-width:44ch;margin-bottom:24px;">Open to entry-level full stack roles and internships. Reach out through any channel below.</p>
+        <a href="mailto:ranjithb2k06@gmail.com" class="btn btn-solid">Send an email →</a>
+      </div>
+      <ul class="contact-list">
+        <li><span>phone</span><span>+91 81480 17881</span></li>
+        <li><span>email</span><a href="mailto:ranjithb2k06@gmail.com">ranjithb2k06@gmail.com</a></li>
+        <li><span>github</span><a href="https://github.com/ranjithbrs" target="_blank" rel="noopener">ranjithbrs</a></li>
+        <li><span>linkedin</span><a href="https://linkedin.com/in/ranjith-b-85907831a" target="_blank" rel="noopener">ranjith-b-85907831a</a></li>
+      </ul>
+    </div>
+    <div class="foot-note" style="margin-top:40px;">// end of file</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal, .module');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
