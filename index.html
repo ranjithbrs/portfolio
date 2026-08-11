@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjith B — Full-Stack Developer & AI Enthusiast</title>
-  <meta name="description" content="Personal Portfolio Website of Ranjith B — B.Tech CSBS Student, Full-Stack Developer (Java, Spring Boot, Python, Flask, React) & AI Enthusiast.">
+  <title>Ranjith B — Full-Stack Developer & AI Engineer</title>
+  <meta name="description" content="Personal Portfolio Website of Ranjith B — B.Tech CSBS Student, Full-Stack Developer (Java, Spring Boot, Python, Flask, React), Cybersecurity Intern & AI Specialist.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +29,8 @@
       --accent-emerald-dim: rgba(16, 185, 129, 0.15);
       --accent-indigo: #6366F1;
       --accent-indigo-dim: rgba(99, 102, 241, 0.15);
+      --accent-cyan: #06B6D4;
+      --accent-cyan-dim: rgba(6, 182, 212, 0.15);
       --accent-alert: #F43F5E;
       
       --text-main: #F9FAFB;
@@ -186,7 +188,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
 
@@ -372,6 +374,72 @@
       color: var(--text-muted);
     }
 
+    /* EXPERIENCE / INTERNSHIP SECTION */
+    .experience-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .experience-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .exp-role {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-company {
+      font-size: 16px;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .exp-duration {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 4px 12px;
+      background: var(--accent-cyan-dim);
+      color: var(--accent-cyan);
+      border-radius: 100px;
+    }
+
+    .exp-list {
+      list-style: none;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .exp-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    .exp-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-size: 16px;
+    }
+
     /* PROJECTS & FILTER SECTION */
     .filter-bar {
       display: flex;
@@ -540,27 +608,74 @@
     }
 
     /* CERTIFICATIONS SECTION */
-    .cert-card {
+    .cert-banner {
       background: linear-gradient(135deg, var(--bg-card) 0%, #1E1B4B 100%);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 32px;
+      padding: 28px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      margin-bottom: 32px;
       flex-wrap: wrap;
     }
 
-    .cert-info h3 {
-      font-size: 22px;
+    .cert-banner-text h3 {
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .cert-info p {
+    .cert-banner-text p {
       color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .cert-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .cert-item-card:hover {
+      border-color: var(--accent-indigo);
+      transform: translateY(-3px);
+    }
+
+    .cert-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--accent-indigo-dim);
+      color: var(--accent-indigo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .cert-item-title {
       font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .cert-item-issuer {
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
     /* CONTACT SECTION */
@@ -685,6 +800,7 @@
       
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certifications">Certifications</a></li>
@@ -703,13 +819,13 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-tag">
-          <i class="fa-solid fa-code"></i> Full-Stack & AI Developer
+          <i class="fa-solid fa-code"></i> Full-Stack & AI Engineer
         </div>
         <h1 class="hero-title">
           Building Scalable <span>Software Systems</span> & AI Workflows.
         </h1>
         <p class="hero-description">
-          B.Tech CSBS student at NIET. Passionate about engineering high-performance Java Spring Boot backends, Python AI automation tools, and secure web applications.
+          B.Tech CSBS student at NIET. Experienced Cybersecurity Intern & Full-Stack Developer proficient in Java Spring Boot, Python AI APIs, and Cloud Systems.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
@@ -735,10 +851,10 @@
         <div class="terminal-body">
           <p><span class="t-keyword">const</span> <span class="t-var">developer</span> = {</p>
           <p style="padding-left: 16px;"><span class="t-var">name</span>: <span class="t-string">"Ranjith B"</span>,</p>
-          <p style="padding-left: 16px;"><span class="t-var">degree</span>: <span class="t-string">"B.Tech CSBS"</span>,</p>
-          <p style="padding-left: 16px;"><span class="t-var">college</span>: <span class="t-string">"Nehru Inst of Tech"</span>,</p>
+          <p style="padding-left: 16px;"><span class="t-var">degree</span>: <span class="t-string">"B.Tech CSBS @ NIET"</span>,</p>
+          <p style="padding-left: 16px;"><span class="t-var">internship</span>: <span class="t-string">"Cybersecurity @ NoviTech"</span>,</p>
           <p style="padding-left: 16px;"><span class="t-var">stack</span>: [<span class="t-string">"Java"</span>, <span class="t-string">"Spring Boot"</span>, <span class="t-string">"Python"</span>, <span class="t-string">"React"</span>],</p>
-          <p style="padding-left: 16px;"><span class="t-var">certified</span>: <span class="t-string">"Google Agentic-AI Badge"</span>,</p>
+          <p style="padding-left: 16px;"><span class="t-var">certified</span>: <span class="t-string">"Google Agentic-AI + 9 Certifications"</span>,</p>
           <p style="padding-left: 16px;"><span class="t-var">location</span>: <span class="t-string">"Coimbatore, India"</span></p>
           <p>};</p>
           <br>
@@ -759,10 +875,10 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Hello! I'm Ranjith, a Computer Science & Business Systems (CSBS) engineering student with a strong drive for software architecture and full-stack engineering.
+            Hello! I'm Ranjith, a Computer Science & Business Systems (CSBS) engineering student with a strong drive for software architecture, cybersecurity, and full-stack engineering.
           </p>
           <p>
-            My focus revolves around building reliable backend services with Java & Spring Boot, creating automated AI solutions with Python & Flask, and designing secure data validation systems.
+            My background includes practical experience in network monitoring and vulnerability detection from my cybersecurity internship, alongside building enterprise web platforms in Java Spring Boot and AI tools with Python.
           </p>
         </div>
 
@@ -772,8 +888,8 @@
             <div class="stat-label">GitHub Repositories</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">6+</div>
-            <div class="stat-label">Full Projects Built</div>
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Certifications Earned</div>
           </div>
           <div class="stat-card">
             <div class="stat-number">CSBS</div>
@@ -788,10 +904,38 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE / INTERNSHIP SECTION -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title"><span class="number">02.</span> Professional Experience</h2>
+      <p class="section-subtitle">Hands-on industry exposure and cybersecurity training.</p>
+
+      <div class="experience-card">
+        <div class="exp-header">
+          <div>
+            <h3 class="exp-role">Cybersecurity Intern</h3>
+            <div class="exp-company"><i class="fa-solid fa-building-shield"></i> NoviTech R&D Private Limited</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="exp-duration">1 Month Internship</span>
+            <a href="https://drive.google.com/file/d/1ikF1cfkQo0NxOMZy5V7t31y-XuESHL3K/view?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">
+              Verify Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <ul class="exp-list">
+          <li>Performed network monitoring and vulnerability detection using <strong>Wireshark</strong>; documented security gaps and mitigation strategies.</li>
+          <li>Gained in-depth exposure to cybersecurity fundamentals including network security protocols, threat detection, and industry best practices.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS SECTION -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title"><span class="number">02.</span> Featured Projects</h2>
+      <h2 class="section-title"><span class="number">03.</span> Featured Projects</h2>
       <p class="section-subtitle">A showcase of production-ready applications, REST APIs, and security tools.</p>
 
       <!-- Filter Bar -->
@@ -952,7 +1096,7 @@
   <!-- SKILLS SECTION -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title"><span class="number">03.</span> Technical Toolkit</h2>
+      <h2 class="section-title"><span class="number">04.</span> Technical Toolkit</h2>
       <p class="section-subtitle">Languages, frameworks, databases, and DevOps utilities I use daily.</p>
 
       <div class="skills-grid">
@@ -995,17 +1139,103 @@
   <!-- CERTIFICATIONS SECTION -->
   <section id="certifications">
     <div class="container">
-      <h2 class="section-title"><span class="number">04.</span> Certifications</h2>
-      <p class="section-subtitle">Industry qualifications and micro-credentials.</p>
+      <h2 class="section-title"><span class="number">05.</span> Certifications & Credentials</h2>
+      <p class="section-subtitle">Verified certificates in AI, Cloud, Development, and Business Analytics.</p>
 
-      <div class="cert-card">
-        <div class="cert-info">
-          <h3>Google Agentic-AI Certification</h3>
-          <p>Verified Credly Badge — Artificial Intelligence & Agentic AI Systems Architecture.</p>
+      <!-- Google Drive Folder Banner -->
+      <div class="cert-banner">
+        <div class="cert-banner-text">
+          <h3>📁 Verified Certificates Folder</h3>
+          <p>Access all official certificate documents and badges on Google Drive.</p>
         </div>
-        <a href="https://www.credly.com/badges/16f8a1c9-1a67-4daf-a8cd-07e7892fc202/public_url" target="_blank" class="btn btn-primary">
-          Verify Badge on Credly <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <a href="https://drive.google.com/drive/folders/1jEl8_ZTFQUk3wCvytGIQeALQTlbyuXnF?usp=drive_link" target="_blank" class="btn btn-primary">
+          Open Google Drive Folder <i class="fa-solid fa-folder-open"></i>
         </a>
+      </div>
+
+      <!-- Certifications Grid -->
+      <div class="certs-grid">
+        
+        <a href="https://www.credly.com/badges/16f8a1c9-1a67-4daf-a8cd-07e7892fc202/public_url" target="_blank" class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <div class="cert-item-title">Agentic AI Architecture</div>
+            <div class="cert-item-issuer">Google Credly Badge</div>
+          </div>
+        </a>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-brands fa-google"></i></div>
+          <div>
+            <div class="cert-item-title">AI & Machine Learning</div>
+            <div class="cert-item-issuer">Google</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <div class="cert-item-title">Generative AI & Deep Learning</div>
+            <div class="cert-item-issuer">EduSkills</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-brands fa-android"></i></div>
+          <div>
+            <div class="cert-item-title">Android Development</div>
+            <div class="cert-item-issuer">Google</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-link"></i></div>
+          <div>
+            <div class="cert-item-title">Blockchain Architecture</div>
+            <div class="cert-item-issuer">NPTEL</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-microchip"></i></div>
+          <div>
+            <div class="cert-item-title">Internet of Things (IoT)</div>
+            <div class="cert-item-issuer">NPTEL</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <div>
+            <div class="cert-item-title">Data Science Master</div>
+            <div class="cert-item-issuer">Altair</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <div class="cert-item-title">Business Analyst</div>
+            <div class="cert-item-issuer">Celonis</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-brands fa-hackerrank"></i></div>
+          <div>
+            <div class="cert-item-title">Java (Basic)</div>
+            <div class="cert-item-issuer">HackerRank</div>
+          </div>
+        </div>
+
+        <div class="cert-item-card">
+          <div class="cert-badge-icon"><i class="fa-brands fa-python"></i></div>
+          <div>
+            <div class="cert-item-title">Python (Basic)</div>
+            <div class="cert-item-issuer">HackerRank</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
