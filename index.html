@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ranjith B — Full-Stack Developer & AI Engineer</title>
   <meta name="description" content="Personal Portfolio Website of Ranjith B — B.Tech CSBS Student, Full-Stack Developer (Java, Spring Boot, Python, Flask, React), Cybersecurity Intern & AI Specialist.">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/169295678?v=4">
+  
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ranjithbrs.github.io/portfolio/">
+  <meta property="og:title" content="Ranjith B — Full-Stack Developer & AI Engineer">
+  <meta property="og:description" content="Personal Portfolio of Ranjith B — B.Tech CSBS, Full-Stack Developer (Java, Spring Boot, Python, React), Cybersecurity Intern & AI Specialist.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/169295678?v=4">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ranjith B — Full-Stack Developer & AI Engineer">
+  <meta name="twitter:description" content="Personal Portfolio of Ranjith B — B.Tech CSBS, Full-Stack Developer (Java, Spring Boot, Python, React), Cybersecurity Intern & AI Specialist.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/169295678?v=4">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -783,10 +797,42 @@
       border-top: 1px solid var(--border-color);
     }
 
+    .hamburger-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    .hamburger-btn:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
     @media (max-width: 768px) {
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .hamburger-btn { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 15, 23, 0.98);
+        flex-direction: column;
+        padding: 24px;
+        gap: 18px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      }
+      .nav-links.open { display: flex; }
+      .status-badge-nav { display: none; }
       .contact-card { padding: 32px 20px; }
     }
   </style>
@@ -798,18 +844,23 @@
     <div class="container nav-wrapper">
       <a href="#" class="logo">&lt;Ranjith.B /&gt;</a>
       
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+        <li><a href="#certifications" onclick="closeMenu()">Certifications</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
 
-      <div class="status-badge-nav">
-        <div class="pulse-dot"></div>
-        <span>Open for Placement</span>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="status-badge-nav">
+          <div class="pulse-dot"></div>
+          <span>Open for Placement</span>
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -830,6 +881,9 @@
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
             Explore Projects <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://drive.google.com/drive/folders/1jEl8_ZTFQUk3wCvytGIQeALQTlbyuXnF?usp=drive_link" target="_blank" class="btn btn-outline">
+            <i class="fa-solid fa-file-arrow-down"></i> View Resume
           </a>
           <a href="https://linkedin.com/in/ranjith-b-85907831a" target="_blank" class="btn btn-outline">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
@@ -1349,6 +1403,35 @@
           toast.classList.remove('show');
         }, 3000);
       });
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      const icon = document.getElementById('menuIcon');
+      if (nav) {
+        nav.classList.toggle('open');
+        if (icon) {
+          if (nav.classList.contains('open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('navLinks');
+      const icon = document.getElementById('menuIcon');
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
     }
   </script>
 </body>
