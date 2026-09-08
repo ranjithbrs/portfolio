@@ -938,7 +938,7 @@
 
         <div class="stats-cards">
           <div class="stat-card">
-            <div class="stat-number">13+</div>
+            <div class="stat-number">15+</div>
             <div class="stat-label">GitHub Repositories</div>
           </div>
           <div class="stat-card">
@@ -1216,6 +1216,52 @@
           </div>
         </div>
 
+        <!-- Project 10 -->
+        <div class="project-card" data-category="python web">
+          <div>
+            <div class="project-top">
+              <div class="project-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <span class="project-status">Gemini 2.0 Multi-Agent</span>
+            </div>
+            <h3 class="project-title">RepoNarrator AI</h3>
+            <p class="project-desc">
+              Autonomous 4-agent pipeline transforming GitHub repositories into interactive Reveal.js slide decks with real-time SSE progress streaming.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Gemini 2.0</span>
+              <span class="tag">Multi-Agent</span>
+              <span class="tag">Flask / SSE</span>
+              <span class="tag">Reveal.js</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+          </div>
+        </div>
+
+        <!-- Project 11 -->
+        <div class="project-card" data-category="python">
+          <div>
+            <div class="project-top">
+              <div class="project-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <span class="project-status">Systems & DSA</span>
+            </div>
+            <h3 class="project-title">Mini Real-World Systems Pack</h3>
+            <p class="project-desc">
+              Modular Python computational engines modeling loan underwriting, dynamic e-commerce pricing, cab surge, and classical DSA algorithms.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">Finance</span>
+              <span class="tag">E-Commerce</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ranjithbrs/Mini-RealWorld-Systems-Pack" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1412,7 +1458,8 @@
       }
 
       cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
+        const cat = card.getAttribute('data-category') || '';
+        if (category === 'all' || cat.split(' ').includes(category)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
