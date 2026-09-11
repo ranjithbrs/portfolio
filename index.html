@@ -692,6 +692,115 @@
       color: var(--text-muted);
     }
 
+    /* PUBLICATIONS SECTION */
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .pub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pub-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-emerald), var(--accent-indigo));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .pub-card:hover {
+      border-color: var(--accent-emerald);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .pub-card:hover::before {
+      opacity: 1;
+    }
+
+    .pub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pub-platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .pub-badge-medium {
+      background: rgba(16, 185, 129, 0.12);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .pub-badge-cloud {
+      background: rgba(99, 102, 241, 0.12);
+      color: #818CF8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .pub-date {
+      font-size: 13px;
+      color: var(--text-subtle);
+      font-family: var(--font-mono);
+    }
+
+    .pub-title {
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .pub-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .pub-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .pub-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
     /* CONTACT SECTION */
     .contact-card {
       background: var(--bg-card);
@@ -850,6 +959,7 @@
         <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
         <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
         <li><a href="#certifications" onclick="closeMenu()">Certifications</a></li>
+        <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
 
@@ -1435,6 +1545,80 @@
           <div>
             <div class="cert-item-title">Python (Basic)</div>
             <div class="cert-item-issuer">HackerRank</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title"><span class="number">06.</span> Technical Publications & Writing</h2>
+      <p class="section-subtitle">Architectural deep dives, multi-agent pipelines, and cloud engineering guides.</p>
+
+      <div class="publications-grid">
+        
+        <!-- Publication 1 -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-header">
+              <span class="pub-platform-badge pub-badge-medium">
+                <i class="fa-brands fa-medium"></i> Medium Publication
+              </span>
+              <span class="pub-date">Sep 2026 · 6 min read</span>
+            </div>
+            <h3 class="pub-title">Building an Autonomous 4-Agent Pipeline with Google Gemini 2.0 Flash and Server-Sent Events</h3>
+            <p class="pub-desc">
+              Architectural walkthrough on orchestrating a multi-agent system that analyzes GitHub codebases without context saturation, streaming real-time milestones to the browser via Server-Sent Events (SSE) and compiling an executive Reveal.js slide deck in under 15 seconds.
+            </p>
+            <div class="pub-tags">
+              <span class="tag">Agentic AI</span>
+              <span class="tag">Gemini 2.0 Flash</span>
+              <span class="tag">Server-Sent Events</span>
+              <span class="tag">Python</span>
+              <span class="tag">System Design</span>
+            </div>
+          </div>
+          <div class="pub-actions">
+            <a href="https://medium.com/@ranjithb2k06/building-an-autonomous-4-agent-pipeline-with-google-gemini-2-0-flash-and-server-sent-events-65d0bc944d2c" target="_blank" class="btn btn-primary btn-sm">
+              Read on Medium 📖
+            </a>
+            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" class="btn btn-outline btn-sm">
+              GitHub Repo 💻
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-header">
+              <span class="pub-platform-badge pub-badge-cloud">
+                <i class="fa-brands fa-google"></i> Google Cloud Series
+              </span>
+              <span class="pub-date">Aug 2026 · Technical Writeup</span>
+            </div>
+            <h3 class="pub-title">My Journey Completing the Agentic AI Labs (Google Cloud Technical Series)</h3>
+            <p class="pub-desc">
+              Comprehensive technical study and implementation review of building autonomous Agent-to-Agent (A2A) microservices using Google Agent Development Kit (ADK) serverlessly deployed on Google Cloud Run with a 100/100 evaluation score.
+            </p>
+            <div class="pub-tags">
+              <span class="tag">Google Cloud</span>
+              <span class="tag">Agent Development Kit</span>
+              <span class="tag">Cloud Run</span>
+              <span class="tag">A2A Protocol</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+          <div class="pub-actions">
+            <a href="https://github.com/ranjithbrs/illustration-agent-a2a" target="_blank" class="btn btn-primary btn-sm">
+              Explore Architecture 🚀
+            </a>
+            <a href="https://linkedin.com/in/ranjith-b-85907831a" target="_blank" class="btn btn-outline btn-sm">
+              LinkedIn Post 🔗
+            </a>
           </div>
         </div>
 
