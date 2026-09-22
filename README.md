@@ -106,7 +106,7 @@ To run or modify the portfolio locally:
 *Panimalar Engineering College, Chennai, India*
 
 * 🌐 **Live Portfolio:** [ranjithbrs.github.io/portfolio](https://ranjithbrs.github.io/portfolio/)
-* 💼 **LinkedIn:** [linkedin.com/in/ranjith-b-1b60a328b](https://www.linkedin.com/in/ranjith-b-1b60a328b/)
+* 💼 **LinkedIn:** [linkedin.com/in/ranjith-b-csbs23](https://www.linkedin.com/in/ranjith-b-csbs23/)
 * 💻 **GitHub:** [@ranjithbrs](https://github.com/ranjithbrs)
 * ✍️ **Medium Tech Blog:** [@ranjithb2k06](https://medium.com/@ranjithb2k06)
 * 📧 **Email:** [ranjithb2k06@gmail.com](mailto:ranjithb2k06@gmail.com)
