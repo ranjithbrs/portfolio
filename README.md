@@ -19,6 +19,15 @@
 
 ---
 
+## 💡 What is this Project in 30 Seconds? (In Plain English)
+
+This is my **official developer portfolio website** hosted live on GitHub Pages:
+- 🌐 **Live Website:** [ranjithbrs.github.io/portfolio](https://ranjithbrs.github.io/portfolio/)
+- 🎯 **Purpose:** A clean, central showcase where recruiters, companies, and fellow developers can view my full-stack projects, live demonstrations, technical publications, and resume in one place.
+- ⚡ **Super Fast & Lightweight:** Built with pure HTML, modern CSS, and JavaScript with zero heavy frameworks, loading instantly in under 1 second.
+
+---
+
 ## 📸 Portfolio Preview & Theme
 
 The portfolio is designed with a **Cyber-Slate & Emerald Glassmorphism** visual language:
