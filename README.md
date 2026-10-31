@@ -82,7 +82,6 @@ portfolio/
 ├── index.html        # Unified single-page portfolio application & styling
 ├── resume.pdf        # Self-hosted production resume asset
 ├── assets/           # Profile photo avatar and graphic assets
-├── resumes/          # 7 tailored ATS-compliant Microsoft Word (.docx) resumes
 ├── LICENSE           # Open-source MIT License
 └── README.md         # Comprehensive developer documentation
 ```
