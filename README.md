@@ -56,12 +56,13 @@ The portfolio is designed with a **Cyber-Slate & Emerald Glassmorphism** visual 
  └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 1. 🗂️ Interactive Project Filtering
-The projects section includes dynamic category switching driven by vanilla JavaScript data attributes:
-* **All Projects:** Complete repository gallery.
-* **Full Stack:** Enterprise Spring Boot, React 18, and Supabase applications.
-* **AI & Machine Learning:** Multi-agent systems, Gemini 2.0 pipelines, and Cloud Run agents.
-* **Python & Systems:** Cryptographic verifiers, CLI calculators, and data extraction pipelines.
+### 1. 🗂️ Interactive Domain-Based Project Filtering
+The projects section includes dynamic category switching driven by vanilla JavaScript data attributes across 4 core domains (18 total featured projects):
+* **All Projects (18):** Complete repository gallery with live demos, Medium writeups, and GitHub links.
+* **🤖 AI & Autonomous Agents:** Multi-agent systems, Gemini 2.0 Flash pipelines, Google ADK agents, and generative AI tools.
+* **🌐 Full-Stack & Cloud:** Enterprise Spring Boot, React 18, Supabase, and containerized Docker deployments.
+* **🛡️ Cybersecurity & Systems:** Cryptographic SHA-256 verifiers, GNU Bash POSIX CLI utilities, and modern authentication interfaces.
+* **📊 Data & DSA Practice:** 50-page web scrapers, exploratory data analysis, geospatial early warning systems, and algorithmic problem-solving collections.
 
 ### 2. 📖 Technical Publications Hub
 Dedicated showcase cards linking directly to published engineering articles on Medium:
