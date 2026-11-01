@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjith B - Full-Stack Developer & AI Engineer</title>
-  <meta name="description" content="Personal Portfolio Website of Ranjith B — B.Tech CSBS Student, Full-Stack Developer (Java, Spring Boot, Python, Flask, React), Cybersecurity Intern & AI Specialist.">
+  <title>Ranjith B - Software Development Engineer (SDE) & Full-Stack Developer</title>
+  <meta name="description" content="Personal Portfolio of Ranjith B — B.Tech CSBS Student, Software Development Engineer (SDE) & Full-Stack Developer (Java 21, Spring Boot 3, Python, React 18, SQL).">
     <link rel="icon" type="image/png" href="assets/profile_avatar.png">
 
   <!-- Open Graph / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ranjithbrs.github.io/portfolio/">
-  <meta property="og:title" content="Ranjith B - Full-Stack Developer & AI Engineer">
-  <meta property="og:description" content="Personal Portfolio of Ranjith B - B.Tech CSBS @ NIET, Full-Stack Developer (Java, Spring Boot, Python, React), Cybersecurity Intern & AI Specialist.">
+  <meta property="og:title" content="Ranjith B - Software Development Engineer (SDE) & Full-Stack Developer">
+  <meta property="og:description" content="Personal Portfolio of Ranjith B - B.Tech CSBS @ NIET, Software Development Engineer (SDE) & Full-Stack Developer (Java 21, Spring Boot 3, Python, React 18, SQL).">
   <meta property="og:image" content="https://ranjithbrs.github.io/portfolio/assets/profile_avatar.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ranjith B - Full-Stack Developer & AI Engineer">
-  <meta name="twitter:description" content="Personal Portfolio of Ranjith B - B.Tech CSBS @ NIET, Full-Stack Developer (Java, Spring Boot, Python, React), Cybersecurity Intern & AI Specialist.">
+  <meta name="twitter:title" content="Ranjith B - Software Development Engineer (SDE) & Full-Stack Developer">
+  <meta name="twitter:description" content="Personal Portfolio of Ranjith B - B.Tech CSBS @ NIET, Software Development Engineer (SDE) & Full-Stack Developer (Java 21, Spring Boot 3, Python, React 18, SQL).">
   <meta name="twitter:image" content="https://ranjithbrs.github.io/portfolio/assets/profile_avatar.png">
 
   <!-- Google Fonts -->
@@ -482,7 +482,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
       gap: 24px;
     }
 
@@ -695,7 +695,7 @@
     /* PUBLICATIONS SECTION */
     .publications-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
       gap: 24px;
     }
 
@@ -926,6 +926,7 @@
     @media (max-width: 768px) {
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-grid { grid-template-columns: 1fr; }
+      .projects-grid, .publications-grid { grid-template-columns: 1fr; }
       .hamburger-btn { display: inline-flex; align-items: center; justify-content: center; }
       .nav-links {
         display: none;
@@ -968,7 +969,7 @@
           <div class="pulse-dot"></div>
           <span>Open for Placement</span>
         </div>
-        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Toggle navigation">
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
           <i class="fa-solid fa-bars" id="menuIcon"></i>
         </button>
       </div>
@@ -1003,13 +1004,13 @@
           <a href="#projects" class="btn btn-primary">
             Explore Projects <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href="resume.pdf" target="_blank" class="btn btn-outline">
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             <i class="fa-solid fa-file-arrow-down"></i> View Resume (PDF)
           </a>
-          <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" class="btn btn-outline">
+          <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             <i class="fa-brands fa-linkedin"></i> LinkedIn
           </a>
-          <a href="https://github.com/ranjithbrs" target="_blank" class="btn btn-outline">
+          <a href="https://github.com/ranjithbrs" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             <i class="fa-brands fa-github"></i> GitHub
           </a>
         </div>
@@ -1093,7 +1094,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
             <span class="exp-duration">1 Month Internship</span>
-            <a href="https://drive.google.com/file/d/1ikF1cfkQo0NxOMZy5V7t31y-XuESHL3K/view?usp=sharing" target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://drive.google.com/file/d/1ikF1cfkQo0NxOMZy5V7t31y-XuESHL3K/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
               Verify Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -1111,7 +1112,7 @@
   <section id="projects">
     <div class="container">
       <h2 class="section-title"><span class="number">03.</span> Featured Projects</h2>
-      <p class="section-subtitle">A showcase of production-ready applications, REST APIs, and security tools.</p>
+      <p class="section-subtitle">A showcase of full-stack applications, cloud architecture labs, and algorithmic practice collections.</p>
 
             <!-- Domain-Based Filter Bar -->
       <div class="filter-bar">
@@ -1145,7 +1146,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/career-copilot-agents" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/career-copilot-agents" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1168,9 +1169,9 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://reponarrator-ai.onrender.com" target="_blank" class="btn btn-primary btn-sm">Live App 🚀</a>
-            <a href="https://medium.com/@ranjithb2k06/building-an-autonomous-4-agent-pipeline-with-google-gemini-2-0-flash-and-server-sent-events-65d0bc944d2c" target="_blank" class="btn btn-outline btn-sm">Medium 📖</a>
-            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" class="btn btn-outline btn-sm">Repo 💻</a>
+            <a href="https://reponarrator-ai.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live App 🚀</a>
+            <a href="https://medium.com/@ranjithb2k06/building-an-autonomous-4-agent-pipeline-with-google-gemini-2-0-flash-and-server-sent-events-65d0bc944d2c" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Medium 📖</a>
+            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Repo 💻</a>
           </div>
         </div>
 
@@ -1193,9 +1194,9 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://online-examination-system-dcoc.onrender.com" target="_blank" class="btn btn-primary btn-sm">Live Demo 🚀</a>
-            <a href="https://medium.com/@ranjithb2k06/engineering-an-anti-cheating-online-examination-engine-with-spring-boot-3-java-21-00046f9065ed" target="_blank" class="btn btn-outline btn-sm">Medium 📖</a>
-            <a href="https://github.com/ranjithbrs/Online-Examination-System" target="_blank" class="btn btn-outline btn-sm">GitHub 💻</a>
+            <a href="https://online-examination-system-dcoc.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo 🚀</a>
+            <a href="https://medium.com/@ranjithb2k06/engineering-an-anti-cheating-online-examination-engine-with-spring-boot-3-java-21-00046f9065ed" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Medium 📖</a>
+            <a href="https://github.com/ranjithbrs/Online-Examination-System" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub 💻</a>
           </div>
         </div>
 
@@ -1219,8 +1220,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://mediq-web-delta.vercel.app/auth" target="_blank" class="btn btn-primary btn-sm">Live App 🚀</a>
-            <a href="https://github.com/ranjithbrs/mediq-web" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://mediq-web-delta.vercel.app/auth" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live App 🚀</a>
+            <a href="https://github.com/ranjithbrs/mediq-web" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1243,9 +1244,9 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://ranjithbrs.pythonanywhere.com" target="_blank" class="btn btn-primary btn-sm">Live Demo 🚀</a>
-            <a href="https://medium.com/@ranjithb2k06/zero-trust-document-verification-building-a-sha-256-tamper-detection-system-in-python-83c498f07ab7" target="_blank" class="btn btn-outline btn-sm">Medium 📖</a>
-            <a href="https://github.com/ranjithbrs/CertValid" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://ranjithbrs.pythonanywhere.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo 🚀</a>
+            <a href="https://medium.com/@ranjithb2k06/zero-trust-document-verification-building-a-sha-256-tamper-detection-system-in-python-83c498f07ab7" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Medium 📖</a>
+            <a href="https://github.com/ranjithbrs/CertValid" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1268,7 +1269,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/linux-todo-list-project1" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/linux-todo-list-project1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1291,8 +1292,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://ranjithbrs.github.io/phc-doctor-attendance-system/" target="_blank" class="btn btn-primary btn-sm">Live App 🚀</a>
-            <a href="https://github.com/ranjithbrs/phc-doctor-attendance-system" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://ranjithbrs.github.io/phc-doctor-attendance-system/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live App 🚀</a>
+            <a href="https://github.com/ranjithbrs/phc-doctor-attendance-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1315,8 +1316,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://ranjithbrs.github.io/login-page-project/" target="_blank" class="btn btn-primary btn-sm">Live Demo 🚀</a>
-            <a href="https://github.com/ranjithbrs/login-page-project" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://ranjithbrs.github.io/login-page-project/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo 🚀</a>
+            <a href="https://github.com/ranjithbrs/login-page-project" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1340,7 +1341,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/employee-ai-task-review-system" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/employee-ai-task-review-system" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1363,7 +1364,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/books-web-scraping" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/books-web-scraping" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1387,7 +1388,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/books-data-analysis" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/books-data-analysis" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1411,8 +1412,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/ner-landslide-early-warning/blob/main/PORTFOLIO.md" target="_blank" class="btn btn-primary btn-sm">Case Study 📖</a>
-            <a href="https://github.com/ranjithbrs/ner-landslide-early-warning" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/ner-landslide-early-warning/blob/main/PORTFOLIO.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Case Study 📖</a>
+            <a href="https://github.com/ranjithbrs/ner-landslide-early-warning" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1435,7 +1436,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/Mini-RealWorld-Systems-Pack" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/Mini-RealWorld-Systems-Pack" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1458,7 +1459,7 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/illustration-agent-a2a" target="_blank" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/illustration-agent-a2a" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1481,8 +1482,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://ranjithbrs.github.io/AI-Lab-Record-Generator/" target="_blank" class="btn btn-primary btn-sm">Live Demo 🚀</a>
-            <a href="https://github.com/ranjithbrs/AI-Lab-Record-Generator" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://ranjithbrs.github.io/AI-Lab-Record-Generator/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo 🚀</a>
+            <a href="https://github.com/ranjithbrs/AI-Lab-Record-Generator" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1505,8 +1506,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://secure-ai-journal-app.vercel.app" target="_blank" class="btn btn-primary btn-sm">Live Site 🚀</a>
-            <a href="https://github.com/ranjithbrs/secure-ai-journal-app" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://secure-ai-journal-app.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Site 🚀</a>
+            <a href="https://github.com/ranjithbrs/secure-ai-journal-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1529,8 +1530,8 @@
             </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ranjithbrs/AdvSciCalcGUI/releases/tag/v1.0.0" target="_blank" class="btn btn-primary btn-sm">Download .exe 📦</a>
-            <a href="https://github.com/ranjithbrs/AdvSciCalcGUI" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/AdvSciCalcGUI/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download .exe 📦</a>
+            <a href="https://github.com/ranjithbrs/AdvSciCalcGUI" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1554,7 +1555,7 @@
           </div>
           <div class="project-links">
             <a href="https://ranjithbrs.github.io/portfolio/" class="btn btn-primary btn-sm">Live Site 🚀</a>
-            <a href="https://github.com/ranjithbrs/portfolio" target="_blank" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
+            <a href="https://github.com/ranjithbrs/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repo 💻</a>
           </div>
         </div>
 
@@ -1623,7 +1624,7 @@
           <h3>📁 Verified Certificates Folder</h3>
           <p>Access all official certificate documents and badges on Google Drive.</p>
         </div>
-        <a href="https://drive.google.com/drive/folders/1jEl8_ZTFQUk3wCvytGIQeALQTlbyuXnF?usp=drive_link" target="_blank" class="btn btn-primary">
+        <a href="https://drive.google.com/drive/folders/1jEl8_ZTFQUk3wCvytGIQeALQTlbyuXnF?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           Open Google Drive Folder <i class="fa-solid fa-folder-open"></i>
         </a>
       </div>
@@ -1631,7 +1632,7 @@
       <!-- Certifications Grid -->
       <div class="certs-grid">
         
-        <a href="https://www.credly.com/badges/16f8a1c9-1a67-4daf-a8cd-07e7892fc202/public_url" target="_blank" class="cert-item-card">
+        <a href="https://www.credly.com/badges/16f8a1c9-1a67-4daf-a8cd-07e7892fc202/public_url" target="_blank" rel="noopener noreferrer" class="cert-item-card">
           <div class="cert-badge-icon"><i class="fa-solid fa-award"></i></div>
           <div>
             <div class="cert-item-title">Agentic AI Architecture</div>
@@ -1745,10 +1746,10 @@
             </div>
           </div>
           <div class="pub-actions">
-            <a href="https://medium.com/@ranjithb2k06/building-an-autonomous-4-agent-pipeline-with-google-gemini-2-0-flash-and-server-sent-events-65d0bc944d2c" target="_blank" class="btn btn-primary btn-sm">
+            <a href="https://medium.com/@ranjithb2k06/building-an-autonomous-4-agent-pipeline-with-google-gemini-2-0-flash-and-server-sent-events-65d0bc944d2c" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
               Read on Medium 📖
             </a>
-            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://github.com/ranjithbrs/reponarrator-ai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
               GitHub Repo 💻
             </a>
           </div>
@@ -1776,10 +1777,10 @@
             </div>
           </div>
           <div class="pub-actions">
-            <a href="https://medium.com/@ranjithb2k06/engineering-an-anti-cheating-online-examination-engine-with-spring-boot-3-java-21-00046f9065ed" target="_blank" class="btn btn-primary btn-sm">
+            <a href="https://medium.com/@ranjithb2k06/engineering-an-anti-cheating-online-examination-engine-with-spring-boot-3-java-21-00046f9065ed" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
               Read on Medium 📖
             </a>
-            <a href="https://github.com/ranjithbrs/Online-Examination-System" target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://github.com/ranjithbrs/Online-Examination-System" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
               GitHub Repo 💻
             </a>
           </div>
@@ -1807,10 +1808,10 @@
             </div>
           </div>
           <div class="pub-actions">
-            <a href="https://medium.com/@ranjithb2k06/zero-trust-document-verification-building-a-sha-256-tamper-detection-system-in-python-83c498f07ab7" target="_blank" class="btn btn-primary btn-sm">
+            <a href="https://medium.com/@ranjithb2k06/zero-trust-document-verification-building-a-sha-256-tamper-detection-system-in-python-83c498f07ab7" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
               Read on Medium 📖
             </a>
-            <a href="https://github.com/ranjithbrs/CertValid" target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://github.com/ranjithbrs/CertValid" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
               GitHub Repo 💻
             </a>
           </div>
@@ -1838,10 +1839,10 @@
             </div>
           </div>
           <div class="pub-actions">
-            <a href="https://github.com/ranjithbrs/illustration-agent-a2a" target="_blank" class="btn btn-primary btn-sm">
+            <a href="https://github.com/ranjithbrs/illustration-agent-a2a" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
               Explore Architecture 🚀
             </a>
-            <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" class="btn btn-outline btn-sm">
+            <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
               LinkedIn Post 🔗
             </a>
           </div>
@@ -1867,8 +1868,8 @@
         </div>
 
         <div class="social-links">
-          <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://github.com/ranjithbrs" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/ranjith-b-csbs" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/ranjithbrs" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="mailto:ranjithb2k06@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
@@ -1919,10 +1920,12 @@
     function toggleMenu() {
       const nav = document.getElementById('navLinks');
       const icon = document.getElementById('menuIcon');
+      const btn = document.querySelector('.hamburger-btn');
       if (nav) {
-        nav.classList.toggle('open');
+        const isOpen = nav.classList.toggle('open');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         if (icon) {
-          if (nav.classList.contains('open')) {
+          if (isOpen) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-xmark');
           } else {
@@ -1936,8 +1939,10 @@
     function closeMenu() {
       const nav = document.getElementById('navLinks');
       const icon = document.getElementById('menuIcon');
+      const btn = document.querySelector('.hamburger-btn');
       if (nav && nav.classList.contains('open')) {
         nav.classList.remove('open');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');

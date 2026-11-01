@@ -70,9 +70,9 @@ Dedicated showcase cards linking directly to published engineering articles on M
 * **Article 2:** *Engineering an Anti-Cheating Online Examination Engine with Spring Boot 3 & Java 21*
 * **Google Cloud Series:** *Cloud Run and Enterprise Microservice Architecture*
 
-### 3. ⚡ Zero-Dependency Performance
-* Engineered without heavy JS frameworks (React, Vue, or Angular) to ensure **instant sub-1 second load times** and zero bundle hydration overhead.
-* Semantic HTML5 markup optimized for SEO, Open Graph social share cards (LinkedIn, Twitter/X), and fast CDN caching on GitHub Pages.
+### 3. ⚡ Zero-Framework Performance
+* Engineered without heavy client-side JavaScript frameworks (React, Vue, or Angular) to guarantee **instant sub-second load times** and zero bundle hydration latency, utilizing standard CDN-cached assets for Google Fonts and Font Awesome icons.
+* Semantic HTML5 markup optimized for accessibility, Open Graph social share cards (LinkedIn, Twitter/X), and fast CDN edge caching on GitHub Pages.
 
 ---
 
@@ -113,7 +113,7 @@ To run or modify the portfolio locally:
 ## 👤 Author & Connect
 
 **Ranjith B**  
-*Full-Stack Developer & AI Specialist | B.Tech Computer Science & Business Systems*  
+*Software Development Engineer (SDE) & Full-Stack Developer | B.Tech Computer Science & Business Systems*  
 *Nehru Institute of Engineering and Technology, Coimbatore, Tamil Nadu, India*
 
 * 🌐 **Live Portfolio:** [ranjithbrs.github.io/portfolio](https://ranjithbrs.github.io/portfolio/)
